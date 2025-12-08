@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Order from "./pages/Order";
 import Cases from "./pages/Cases";
+import Сontacts from "./pages/Cases";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/order" element={<Order />} />
         <Route path="/cases" element={<Cases />} />
+        <Route path="/contacts" element={<Сontacts />} />
       </Routes>
       <Footer />
     </BrowserRouter>
