@@ -6,6 +6,9 @@ import Cases from "./pages/Cases";
 import Сontacts from "./pages/Cases";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
+import Cookies from "./pages/Cookies.jsx";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Route path="/order" element={<Order />} />
         <Route path="/cases" element={<Cases />} />
         <Route path="/contacts" element={<Сontacts />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookies />} />
       </Routes>
       <Footer />
     </BrowserRouter>

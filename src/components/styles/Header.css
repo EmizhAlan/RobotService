@@ -243,7 +243,7 @@ header .desktop-nav a:not(.order-btn):hover {
   border-radius: 8px;
   background: var(--blue-bright);
   border: none;
-  width: 100%;
+  width: 92%;
   opacity: 1 !important;
   transform: none !important;
   transition: all 0.3s ease !important;
@@ -294,6 +294,31 @@ header .desktop-nav a:not(.order-btn):hover {
     padding: 70px 20px 20px;
   }
   
+  body {
+    padding-top: 60px;
+  }
+}
+
+/* Улучшение для очень маленьких экранов */
+@media (max-height: 400px) {
+  .mobile-menu {
+
+    padding: 50px 30px 30px;
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .mobile-menu a {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+
+  .mobile-order {
+    width: 92%;
+  }
+
   body {
     padding-top: 60px;
   }

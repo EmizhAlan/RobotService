@@ -108,6 +108,7 @@
   background: var(--blue-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 150, 255, 0.3);
+  color: var(--gray);
 }
 
 .cta-button.secondary {
@@ -360,10 +361,7 @@
     flex-direction: column;
     gap: 15px;
   }
-  
-  .cta-button {
-    
-  }
+
   
   .features-grid {
     grid-template-columns: 1fr;
