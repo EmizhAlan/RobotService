@@ -18,8 +18,8 @@ export default function Footer() {
             </p>
             <div className="social-links">
               {/* Telegram */}
-              <a href="https://t.me/robotservice" className="social-link" aria-label="Telegram">
-                <svg
+              <a href="https://web.telegram.org/a/#987073868" className="social-link" aria-label="Telegram">
+                <svg className="vk-ico"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -31,20 +31,20 @@ export default function Footer() {
               </a>
 
               {/* VK */}
-              <a href="https://vk.com/robotservice" className="social-link" aria-label="VK">
-                <svg 
-                  width="20" 
-                  height="20" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.002-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.89.791-1.225.791-.164 0-.419-.192-.419-.739V6.949c0-.656-.187-.949-.74-.949H9.161c-.419 0-.668.306-.668.593 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H2.752c-.749 0-.898.345-.898.731 0 .682.892 4.073 4.148 8.553 2.17 3.058 5.226 4.715 8.006 4.715 1.671 0 1.875-.368 1.875-1.001 0-2.922-.151-3.198.686-3.198.388 0 1.056.192 2.616 1.667C18.277 18.758 18.77 19 19.4 19h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z" />
-                </svg>
+              <a href="https://vk.com/emizh_alan" className="social-link" aria-label="VK">
+                <svg className="vk-icon" width="136" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#new_logo_vk_with_text__a)">
+                  <g clip-path="url(#new_logo_vk_with_text__b)">
+                    
+                    <path d="M11.5 24h1c5.44 0 8.15 0 9.83-1.68C24 20.64 24 17.92 24 12.5v-1.02c0-5.4 0-8.12-1.67-9.8C20.65 0 17.93 0 12.5 0h-1C6.06 0 3.35 0 1.67 1.68 0 3.36 0 6.08 0 11.5v1.02c0 5.4 0 8.12 1.68 9.8C3.36 24 6.08 24 11.5 24Z" fill=""></path>
+                    <path d="M12.77 17.29c-5.47 0-8.59-3.75-8.72-9.99h2.74c.09 4.58 2.11 6.52 3.71 6.92V7.3h2.58v3.95c1.58-.17 3.24-1.97 3.8-3.95h2.58a7.62 7.62 0 0 1-3.51 4.98 7.9 7.9 0 0 1 4.11 5.01h-2.84a4.94 4.94 0 0 0-4.14-3.57v3.57h-.31Z" fill="#fff">
+                      </path></g></g><defs><clipPath id="new_logo_vk_with_text__a"><path fill="#fff" transform="translate(.000)" d="M0 0h136v24H0z"></path>
+                      </clipPath><clipPath id="new_logo_vk_with_text__b">
+                        <path fill="#fff" transform="translate(0)" d="M0 0h136v48H0z"></path></clipPath></defs></svg>
               </a>
 
               {/* Instagram */}
-              <a href="https://instagram.com/robotservice" className="social-link" aria-label="Instagram">
+              <a href="https://www.instagram.com/alanemizh1?igsh=MWk1bDVtNGJ4MXRlNQ==" className="social-link" aria-label="Instagram">
                 <svg 
                   width="20" 
                   height="20" 
@@ -74,8 +74,8 @@ export default function Footer() {
             <h3 className="footer-heading">О НАС</h3>
             <ul className="footer-links">
               <li><Link to="/workshops" className="footer-link">Полезная информация</Link></li>
-              <li><Link to="/courses" className="footer-link">Новости</Link></li>
-              <li><Link to="/tutorials" className="footer-link">Поддержка проекта</Link></li>
+              <li><Link to="/news" className="footer-link">Новости</Link></li>
+              <li><Link to="/supportme" className="footer-link">Поддержка проекта</Link></li>
               <li><Link to="/resources" className="footer-link">Ресурсы</Link></li>
             </ul>
           </div>
@@ -87,7 +87,7 @@ export default function Footer() {
               <li><Link to="/support" className="footer-link">Поддержка клиента</Link></li>
               <li><Link to="/faq" className="footer-link">Частые вопросы</Link></li>
               <li><Link to="/docs" className="footer-link">Документация</Link></li>
-              <li><Link to="/contact" className="footer-link">Контакты</Link></li>
+              <li><Link to="/contacts" className="footer-link">Контакты</Link></li>
             </ul>
           </div>
 

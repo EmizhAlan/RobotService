@@ -705,7 +705,7 @@
 
 .stage-content {
   margin-left: 60px;
-  padding-top: 20px;
+
   flex: 1;
 }
 
@@ -738,7 +738,7 @@
 }
 
 .stage-line {
-  position: absolute;
+
   left: 60px;
   top: 120px;
   bottom: -60px;
@@ -808,7 +808,7 @@
   }
   
   .stages-timeline::before {
-    left: 30px;
+    left: 43px;
   }
   
   .stage-item {
@@ -963,8 +963,8 @@
 
 .featured-badge {
   position: absolute;
-  top: 20px;
-  right: -30px;
+  top: 35px;
+  right: -46px;
   background: var(--blue-bright);
   color: var(--white);
   padding: 8px 40px;
@@ -1002,7 +1002,7 @@
 }
 
 .price-amount {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--white);
   display: block;
@@ -1070,7 +1070,7 @@
 }
 
 .pricing-button.primary:hover {
-  background: var(--blue-light);
+  background: var(--gray);
   border-color: var(--blue-light);
 }
 
@@ -1143,7 +1143,7 @@
   }
   
   .price-amount {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   
   .plan-name {
@@ -1166,7 +1166,7 @@
   }
   
   .price-amount {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   
   .plan-features li {
@@ -1183,4 +1183,251 @@
     padding: 6px 35px;
     right: -35px;
   }
+}
+
+.computer-3d-animation {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.computer-case {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(-15deg);
+  width: 300px;
+  height: 250px;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) rotateY(-15deg) translateY(0); }
+  50% { transform: translate(-50%, -50%) rotateY(-15deg) translateY(-20px); }
+}
+
+.computer-monitor {
+  position: absolute;
+  width: 200px;
+  height: 140px;
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.monitor-screen {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #0a0e17;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-content {
+  text-align: center;
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.status-bar {
+  width: 160px;
+  height: 4px;
+  background: rgba(0, 255, 136, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.status-progress {
+  width: 100%;
+  height: 100%;
+  background: #00ff88;
+  border-radius: 2px;
+  animation: scan 2s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.component {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+
+.component.cpu {
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  left: 20px;
+}
+
+.component.gpu {
+  width: 60px;
+  height: 20px;
+  bottom: 20px;
+  left: 20px;
+}
+
+.component.ram {
+  width: 40px;
+  height: 10px;
+  top: 60px;
+  right: 20px;
+}
+
+.component-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 136, 0.3);
+  border-radius: inherit;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.led-indicator {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.led-indicator.power {
+  background: #00ff88;
+  top: 10px;
+  right: 10px;
+  animation: blink 1s infinite;
+}
+
+.led-indicator.hdd {
+  background: #ff6b6b;
+  top: 20px;
+  right: 10px;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b6b;
+  font-size: 20px;
+  animation: floatIcon 8s ease-in-out infinite;
+}
+
+.floating-icon:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-icon:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2.6s;
+}
+
+.floating-icon:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 5.2s;
+}
+
+@keyframes floatIcon {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateY(-40px) rotate(180deg); 
+    opacity: 1;
+  }
+}
+
+/* CSS стили для стеклянного эффекта */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.bot-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  padding: 2px;
 }

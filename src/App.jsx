@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
 import Cookies from "./pages/Cookies.jsx";
+import SupportPage from "./footerpages/SupportPage.jsx"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />
+        <Route path="/supportme" element={<SupportPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

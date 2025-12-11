@@ -45,16 +45,22 @@ export default function Home() {
           </div>
           
           <div className="hero-image">
-            {/* Место для изображения */}
-            <div className="image-placeholder">
-              <div className="placeholder-content">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                  <circle cx="12" cy="13" r="4"/>
-                </svg>
-                <p>Изображение бота будет здесь</p>
+            {/* Просто красивая картинка */}
+              <div className="hero-image">
+               <img 
+                 src="/script.jpg" 
+                 alt="Ремонт компьютеров в Краснодаре"
+                 className="hero-img"
+                 style={{
+                    width: '100%',
+                   maxWidth: '500px',
+                    borderRadius: '20px',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                   display: 'block',
+                   margin: '0 auto'
+                 }}
+               />
               </div>
-            </div>
             {/* Декоративные элементы */}
             <div className="decorative-circle circle-1"></div>
             <div className="decorative-circle circle-2"></div>
@@ -75,7 +81,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3>Работа по ТЗ</h3>
-              <p>Работаю по готовому ТЗ или помогаю его составить с нуля под ваши задачи</p>
+              <p>Работаем по готовому ТЗ или помогаем его составить с нуля под ваши задачи</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
@@ -85,7 +91,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3>Чистый код</h3>
-              <p>Пишу чистый, структурированный код, который легко поддерживать и расширять</p>
+              <p>Пишем чистый, структурированный код, который легко поддерживать и расширять</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
@@ -141,7 +147,7 @@ export default function Home() {
             <div className="benefit-card">
               <div className="benefit-number">02</div>
               <div className="benefit-content">
-                <h3 className="benefit-heading">Быстрая разработка</h3>
+                <h3 className="benefit-heading">Быстрая <br></br>разработка</h3>
                 <p className="benefit-description">
                   Оперативное создание бота с учётом всех требований клиента. 
                   Соблюдение сроков без потери качества.
@@ -172,23 +178,25 @@ export default function Home() {
             </div>
 
             <div className="benefit-card">
-              <div className="benefit-number">04</div>
+              <div className="benefit-number">05</div>
               <div className="benefit-content">
-                <h3 className="benefit-heading">Понимание бизнес-процессов</h3>
+                <h3 className="benefit-heading">Фокус на<br></br> опыте</h3>
                 <p className="benefit-description">
-                  Глубокое знание бизнес-процессов помогает создавать ботов, 
-                  максимально соответствующих потребностям компании.
+                  Интуитивные сценарии взаимодействия и чёткая логика 
+                  диалогов делают общение с ботом простым даже для 
+                  нетехнических пользователей.
                 </p>
               </div>
             </div>
 
             <div className="benefit-card">
-              <div className="benefit-number">04</div>
+              <div className="benefit-number">06</div>
               <div className="benefit-content">
-                <h3 className="benefit-heading">Понимание бизнес-процессов</h3>
+                <h3 className="benefit-heading">Гибкость в решений задач</h3>
                 <p className="benefit-description">
-                  Глубокое знание бизнес-процессов помогает создавать ботов, 
-                  максимально соответствующих потребностям компании.
+                  Боты проектируются с учётом роста бизнеса — 
+                  легко адаптируются под новые задачи, 
+                  каналы и объёмы работы без полной перестройки системы.
                 </p>
               </div>
             </div>
@@ -317,7 +325,7 @@ export default function Home() {
               </div>
               
               <div className="pricing-price">
-                <span className="price-amount">500 USD</span>
+                <span className="price-amount">10 000 руб.</span>
               </div>
               
               <ul className="plan-features">
@@ -367,7 +375,7 @@ export default function Home() {
               </div>
               
               <div className="pricing-price">
-                <span className="price-amount">1500 USD</span>
+                <span className="price-amount">50 000 руб.</span>
               </div>
               
               <ul className="plan-features">
@@ -411,12 +419,12 @@ export default function Home() {
             {/* Полная автоматизация */}
             <div className="pricing-card">
               <div className="pricing-card-header">
-                <h3 className="plan-name">Полная автоматизация</h3>
-                <p className="plan-description">Комплексное решение для автоматизации бизнес-процессов</p>
+                <h3 className="plan-name">Автоматизация</h3>
+                <p className="plan-description">Автоматизация бизнес-процессов</p>
               </div>
               
               <div className="pricing-price">
-                <span className="price-amount">3000 USD</span>
+                <span className="price-amount">100 000 руб.</span>
               </div>
               
               <ul className="plan-features">

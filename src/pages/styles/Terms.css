@@ -7,7 +7,7 @@
 }
 
 .privacy-container {
-  max-width: 800px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -223,4 +223,42 @@
     min-width: auto;
     margin-right: 0;
   }
+}
+
+/* ====== ОБЩИЙ СТИЛЬ ДЛЯ ТЕКСТА ====== */
+.terms-page {
+  background: var(--bg-main);
+  color: var(--text-main); /* Убедитесь, что это НЕ белый цвет! */
+  min-height: 100vh;
+  padding: 40px 0;
+  line-height: 1.6;
+}
+
+.terms-content {
+  background: rgba(255, 255, 255, 0.02); /* Полупрозрачный фон для контраста */
+  border: 1px solid var(--dark-gray);
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.terms-section h2,
+.terms-section h3 {
+  color: var(--white); /* Заголовки — белые, но фон темный */
+}
+
+.terms-section p,
+.terms-section ul {
+  color: var(--gray); /* Текст — серый, чтобы был контраст с белым фоном */
+}
+
+.terms-notice {
+  background: rgba(31, 91, 255, 0.05);
+  border: 1px solid rgba(31, 91, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.terms-notice p {
+  color: var(--white); /* Важное сообщение — белый текст */
 }

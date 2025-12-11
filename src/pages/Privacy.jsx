@@ -10,7 +10,7 @@ export default function Privacy() {
             ← Назад на главную
           </Link>
           <h1 className="privacy-title">Политика конфиденциальности</h1>
-          <p className="privacy-update">Последнее обновление: 24 декабря 2023 года</p>
+          <p className="privacy-update">Последнее обновление: 11 декабря 2025 года</p>
         </header>
 
         <main className="privacy-content">
@@ -158,10 +158,10 @@ export default function Privacy() {
             <h2>13. Контактная информация</h2>
             <p>По вопросам, связанным с обработкой персональных данных, вы можете связаться с нами:</p>
             <ul className="contact-info">
-              <li><strong>Email:</strong> privacy@robotservice.ru</li>
-              <li><strong>Telegram:</strong> @robotservice</li>
-              <li><strong>Телефон:</strong> +7 (XXX) XXX-XX-XX</li>
-              <li><strong>Адрес:</strong> [укажите юридический адрес]</li>
+              <li><strong>Email:</strong>emizalan1@gmail.com</li>
+              <li><strong>Telegram:</strong>@Emizh_Alan</li>
+              <li><strong>Телефон:</strong> +7 (918) 339-12-32</li>
+              
             </ul>
           </section>
 
@@ -175,7 +175,7 @@ export default function Privacy() {
         </main>
 
         <footer className="privacy-footer">
-          <p>© 2023 RobotService. Все права защищены.</p>
+          <p>© 2025 RobotService. Все права защищены.</p>
           <Link to="/" className="home-link">
             Вернуться на главную
           </Link>
