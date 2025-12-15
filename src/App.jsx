@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Order from "./pages/Order";
 import Cases from "./pages/Cases";
-import Сontacts from "./pages/Cases";
+import Сontacts from "./pages/Сontacts";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Privacy from "./pages/Privacy.jsx";

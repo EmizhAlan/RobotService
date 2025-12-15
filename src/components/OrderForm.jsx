@@ -103,7 +103,7 @@ ${form.description}
         <div className="form-grid">
           <div className="form-group">
             <label htmlFor="name" className="form-label">
-              Ваше имя <span className="required">*</span>
+              Ваше имя <span className="required"></span>
             </label>
             <input
               id="name"
@@ -119,7 +119,7 @@ ${form.description}
 
           <div className="form-group">
             <label htmlFor="contact" className="form-label">
-              Контакт для связи <span className="required">*</span>
+              Контакт для связи <span className="required"></span>
             </label>
             <input
               id="contact"
@@ -173,7 +173,7 @@ ${form.description}
 
         <div className="form-group full-width">
           <label htmlFor="description" className="form-label">
-            Описание задачи <span className="required">*</span>
+            Описание задачи <span className="required"></span>
           </label>
           <textarea
             id="description"
