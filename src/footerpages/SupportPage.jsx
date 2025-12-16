@@ -16,7 +16,7 @@ const SupportPage = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const elements = document.querySelectorAll('.support-container, .support-card, .donation-card, .support-message, .impact-card, .benefit-card');
+      const elements = document.querySelectorAll('.support-container, .support-card, .donation-card, .support-message, .impact-card, .benefit-card_2');
       elements.forEach((el, index) => {
         setTimeout(() => {
           el.style.opacity = '1';
@@ -164,7 +164,7 @@ const SupportPage = () => {
           </div>
           
           <div className="benefits-grid">
-            <div className="benefit-card">
+            <div className="benefit-card_2">
               <div className="benefit-content">
                 <h3>Приоритетный доступ к новинкам</h3>
                 <p>
@@ -175,7 +175,7 @@ const SupportPage = () => {
               </div>
             </div>
             
-            <div className="benefit-card">
+            <div className="benefit-card_2">
               <div className="benefit-content">
                 <h3>Персональная техническая поддержка</h3>
                 <p>
@@ -186,7 +186,7 @@ const SupportPage = () => {
               </div>
             </div>
             
-            <div className="benefit-card">
+            <div className="benefit-card_2">
               <div className="benefit-content">
                 <h3>Участие в roadmap</h3>
                 <p>

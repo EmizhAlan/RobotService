@@ -200,8 +200,27 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
-
+            
+            <div className="benefit-card">
+              <div className="benefit-number">07</div>
+                <div className="benefit-content">
+                  <h3 className="benefit-heading">Контроль процессов</h3>
+                  <p className="benefit-description">
+                    Все действия ботов логируются и доступны для анализа — 
+                    вы всегда понимаете, что происходит внутри системы.
+                  </p>
+              </div>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-number">08</div>
+              <div className="benefit-content">
+                <h3 className="benefit-heading">Снижение возможных затрат</h3>
+                <p className="benefit-description">
+                  Автоматизация сокращает расходы на ручной труд, 
+                  минимизирует количество ошибок и снижает нагрузку на сотрудников.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

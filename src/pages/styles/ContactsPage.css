@@ -1,0 +1,371 @@
+/* ContactsPage.css */
+
+.contacts-simple {
+  background: var(--deep-black);
+  color: var(--white);
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Hero секция */
+.contact-hero-simple {
+  padding: 100px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero-simple::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(2, 96, 232, 0.1) 0%, transparent 60%);
+  z-index: -1;
+}
+
+.hero-container_2 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hero-badge-simple {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.hero-title-simple {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--white), rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-text-simple {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Основной контент */
+.contact-content-simple {
+  padding: 60px 20px;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Левая часть - Информация */
+.contact-info-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.phone-block {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.phone-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.phone-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.phone-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.phone-number:hover {
+  color: var(--blue-bright);
+}
+
+.phone-note {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.features-block {
+  padding: 0 10px;
+}
+
+.features-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: var(--white);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Правая часть - Форма */
+.contact-form-simple {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.form-title-simple {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.form-subtitle-simple {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+
+.simple-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group-simple {
+  margin: 0;
+}
+
+.form-input-simple,
+.form-textarea-simple {
+  width: 90%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input-simple:focus,
+.form-textarea-simple:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(2, 96, 232, 0.15);
+}
+
+.form-input-simple::placeholder,
+.form-textarea-simple::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-textarea-simple {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+.submit-btn-simple {
+  padding: 18px 32px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-bright));
+  border: none;
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn-simple:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(2, 96, 232, 0.4);
+}
+
+.form-note-simple {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* CTA блок */
+.cta-simple {
+  padding: 80px 20px;
+}
+
+.cta-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-title-simple {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.cta-text-simple {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-button-simple {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-bright));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-button-simple:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(2, 96, 232, 0.4);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero-title-simple {
+    font-size: 2.2rem;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .phone-number {
+    font-size: 1.7rem;
+  }
+  
+  .contact-form-simple,
+  .phone-block {
+    padding: 30px;
+  }
+  
+  .cta-title-simple {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-simple {
+    padding: 80px 0 40px;
+  }
+  
+  .hero-title-simple {
+    font-size: 1.8rem;
+  }
+  
+  .hero-text-simple {
+    font-size: 1.1rem;
+  }
+  
+  .phone-number {
+    font-size: 1.5rem;
+  }
+  
+  .form-title-simple {
+    font-size: 1.6rem;
+  }
+  
+  .submit-btn-simple {
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+  
+  .cta-button-simple {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-badge-simple,
+.hero-title-simple,
+.hero-text-simple,
+.phone-block,
+.features-block,
+.contact-form-simple,
+.cta-container {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero-badge-simple { animation-delay: 0.1s; }
+.hero-title-simple { animation-delay: 0.2s; }
+.hero-text-simple { animation-delay: 0.3s; }
+.phone-block { animation-delay: 0.4s; }
+.features-block { animation-delay: 0.5s; }
+.contact-form-simple { animation-delay: 0.6s; }
+.cta-container { animation-delay: 0.7s; }
