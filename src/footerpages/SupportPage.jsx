@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import InputMask from 'react-input-mask';
 import { IMaskInput } from 'react-imask';
+import qrCode from '../../public/assetst/qrcode.jpg';
 import '../footerpages/styles/SupportPage.css';
 
 const SupportPage = () => {
@@ -253,15 +254,30 @@ const SupportPage = () => {
           
           <div className="qr-container">
             <div className="qr-wrapper">
-              <div className="qr-placeholder">
-                <div className="qr-code">
-                  <div className="qr-scan-line"></div>
-                  <img src="../public/qrcode.jpg" alt="" />
-                </div>
-                <div className="qr-label">Отсканируйте в любом банковском приложении</div>
-                <div className="qr-note">Рекомендуемая сумма: от 500₽</div>
+            <div className="qr-placeholder">
+              <div className="qr-code">
+                <div className="qr-scan-line"></div>
+
+                <a
+                  href="https://tbank.ru/cf/2r6QqGkybAy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Перейти к пожертвованию"
+                >
+                  <img src={qrCode} alt="QR-код для пожертвования" />
+                </a>
+
+              </div>
+
+              <div className="qr-label">
+                Отсканируйте в любом банковском приложении
+              </div>
+              <div className="qr-note">
+                Рекомендуемая сумма: от 500₽
               </div>
             </div>
+          </div>
+
             
             <div className="donation-info">
               <div className="info-item">

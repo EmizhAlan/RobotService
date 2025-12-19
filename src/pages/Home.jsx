@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "./styles/Home.css";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className="home">
       {/* Герой секция */}
@@ -380,7 +382,7 @@ export default function Home() {
                 </li>
               </ul>
               
-              <button className="pricing-button">
+              <button className="pricing-button" onClick={() => navigate('/services')}>
                 Выбрать тариф
               </button>
             </div>
@@ -430,7 +432,7 @@ export default function Home() {
                 </li>
               </ul>
               
-              <button className="pricing-button primary">
+              <button className="pricing-button primary" onClick={() => navigate('/services')}>
                 Выбрать тариф
               </button>
             </div>
@@ -479,7 +481,7 @@ export default function Home() {
                 </li>
               </ul>
               
-              <button className="pricing-button">
+              <button className="pricing-button" onClick={() => navigate('/services')}>
                 Выбрать тариф
               </button>
             </div>
@@ -489,7 +491,7 @@ export default function Home() {
           <div className="pricing-footer">
             <p className="custom-project-text">
               Нужен индивидуальный проект? 
-              <a href="/contact" className="custom-project-link"> Обсудить персональный тариф →</a>
+              <a href="/contacts" className="custom-project-link"> Обсудить персональный тариф →</a>
             </p>
           </div>
         </div>

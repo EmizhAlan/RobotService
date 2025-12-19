@@ -4,22 +4,77 @@ import "../pages/styles/ContactsPage.css";
 export default function Contacts() {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
-    message: ""
+    contact: "", // Изменено с phone на contact для соответствия sendOrder
+    description: "" // Изменено с message на description
   });
 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  // Замените эти значения на свои
+  const BOT_TOKEN = "8544607115:AAFrA1GapB8tgluo8V5R3yFlajN6yPicqG4";
+  const CHAT_ID = "-5023413115";
   const phoneNumber = "+7 (918) 339-12-32";
 
-  const handleSubmit = (e) => {
+  // Используем sendOrder вместо handleSubmit
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Здесь будет отправка формы
-    alert("Заявка отправлена! Мы свяжемся с вами в течение 15 минут.");
-    setFormData({
-      name: "",
-      phone: "",
-      message: ""
-    });
+    
+    // Проверка заполнения обязательных полей
+    if (!formData.name || !formData.contact || !formData.description) {
+      alert("Пожалуйста, заполните обязательные поля: имя, контакт и описание задачи");
+      return;
+    }
+
+    setLoading(true);
+
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    
+    const message = `
+🎯 НОВАЯ ЗАЯВКА С САЙТА ROBOTSERVICE
+━━━━━━━━━━━━━━━━━━━━━━━━
+👤 *Имя:* ${formData.name}
+📞 *Контакт:* ${formData.contact}
+📝 *Описание задачи:*
+${formData.description}
+━━━━━━━━━━━━━━━━━━━━━━━━
+🕒 ${new Date().toLocaleString("ru-RU")}
+    `;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: "Markdown",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.ok) {
+        setSuccess(true);
+        // Сброс формы
+        setFormData({
+          name: "",
+          contact: "",
+          description: "",
+        });
+        
+        // Скрыть сообщение об успехе через 5 секунд
+        setTimeout(() => setSuccess(false), 5000);
+        alert("Заявка отправлена! Мы свяжемся с вами в течение 15 минут.");
+      } else {
+        alert(`Ошибка отправки: ${data.description || "Неизвестная ошибка"}`);
+      }
+    } catch (error) {
+      console.error("Ошибка:", error);
+      alert("Произошла ошибка при отправке. Пожалуйста, попробуйте позже.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -58,7 +113,7 @@ export default function Contacts() {
               <div className="phone-icon"></div>
               <h2 className="phone-title">Позвоните нам</h2>
               <a 
-                href={`tel:${phoneNumber}`} 
+                href={`tel:${phoneNumber.replace(/\D/g, '')}`} 
                 className="phone-number"
               >
                 {phoneNumber}
@@ -89,6 +144,19 @@ export default function Contacts() {
               Оставьте контакты, и мы перезвоним в течение 15 минут
             </p>
             
+            {success && (
+              <div className="success-message" style={{
+                background: "#4CAF50",
+                color: "white",
+                padding: "10px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+                textAlign: "center"
+              }}>
+                Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+              </div>
+            )}
+            
             <form onSubmit={handleSubmit} className="simple-form">
               <div className="form-group-simple">
                 <input
@@ -97,36 +165,44 @@ export default function Contacts() {
                   value={formData.name}
                   onChange={handleChange}
                   className="form-input-simple"
-                  placeholder="Ваше имя"
+                  placeholder="Ваше имя *"
                   required
+                  disabled={loading}
                 />
               </div>
               
               <div className="form-group-simple">
                 <input
                   type="tel"
-                  name="phone"
-                  value={formData.phone}
+                  name="contact"
+                  value={formData.contact}
                   onChange={handleChange}
                   className="form-input-simple"
-                  placeholder="Номер телефона"
+                  placeholder="Номер телефона или Telegram *"
                   required
+                  disabled={loading}
                 />
               </div>
               
               <div className="form-group-simple">
                 <textarea
-                  name="message"
-                  value={formData.message}
+                  name="description"
+                  value={formData.description}
                   onChange={handleChange}
                   className="form-textarea-simple"
-                  placeholder="Краткое описание задачи"
+                  placeholder="Краткое описание задачи *"
                   rows="3"
+                  required
+                  disabled={loading}
                 />
               </div>
               
-              <button type="submit" className="submit-btn-simple">
-                Отправить заявку
+              <button 
+                type="submit" 
+                className="submit-btn-simple"
+                disabled={loading}
+              >
+                {loading ? "Отправка..." : "Отправить заявку"}
               </button>
               
               <p className="form-note-simple">
@@ -145,7 +221,7 @@ export default function Contacts() {
             Разработаем решение, которое автоматизирует ваши процессы уже через неделю
           </p>
           <a 
-            href={`tel:${phoneNumber}`} 
+            href={`tel:${phoneNumber.replace(/\D/g, '')}`} 
             className="cta-button-simple"
           >
             Позвонить сейчас
