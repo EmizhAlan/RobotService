@@ -10,6 +10,12 @@ import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
 import Cookies from "./pages/Cookies.jsx";
 import SupportPage from "./footerpages/SupportPage.jsx"
+import Catalog from "./pages/Catalog"
+import Workshop from "./pages/Workshop"
+import News from "./pages/News"
+import Resources from "./pages/Resources"
+import SupportClient from "./pages/SupportClient"
+import Documentation from "./pages/Documentation"
 
 function App() {
   return (
@@ -25,6 +31,12 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/supportme" element={<SupportPage />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/workshops" element={<Workshop />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/faq" element={<SupportClient />} />
+        <Route path="/documentation" element={<Documentation />} />
       </Routes>
       <Footer />
     </BrowserRouter>

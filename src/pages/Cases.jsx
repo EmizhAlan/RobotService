@@ -49,7 +49,7 @@ export default function Cases() {
       time: "28 дней",
       budget: "от 180 000 ₽",
       roi: "2.5 месяца",
-      color: "#00A86B",
+      color: "#0066CC",
       files: [
         { name: "ТЗ проекта", format: "pdf", size: "3.1 MB" },
         { name: "Дизайн интерфейса", format: "fig", size: "4.5 MB" },
@@ -74,7 +74,7 @@ export default function Cases() {
       time: "35 дней",
       budget: "от 240 000 ₽",
       roi: "3 месяца",
-      color: "#9C27B0",
+      color: "#0066CC",
       files: [
         { name: "Техническое задание", format: "pdf", size: "3.8 MB" },
         { name: "Архитектура AI-системы", format: "pdf", size: "2.9 MB" },

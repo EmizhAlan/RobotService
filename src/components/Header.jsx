@@ -80,6 +80,9 @@ export default function Header() {
           <Link to="/services" onClick={() => setMenuOpen(false)}>
             Услуги
           </Link>
+          <Link to="/catalog" onClick={() => setMenuOpen(false)}>
+            Каталог
+          </Link>
           <Link to="/cases" onClick={() => setMenuOpen(false)}>
             Кейсы
           </Link>
