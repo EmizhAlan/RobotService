@@ -173,14 +173,14 @@ export default function Documentation() {
               >
                 <div className="doc-card-header">
                   <div className="doc-level" style={{ 
-                    background: doc.level === 'Начальный' ? 'rgba(19, 206, 102, 0.1)' : 
+                    background: doc.level === 'Начальный' ? 'rgba(2, 96, 232, 0.1)' : 
                                doc.level === 'Средний' ? 'rgba(2, 96, 232, 0.1)' : 
-                               'rgba(255, 91, 0, 0.1)',
-                    color: doc.level === 'Начальный' ? '#13ce66' : 
-                           doc.level === 'Средний' ? 'var(--blue)' : '#FF6B35',
-                    borderColor: doc.level === 'Начальный' ? 'rgba(19, 206, 102, 0.2)' : 
+                               'rgba(31, 91, 255, 0.1)',
+                    color: doc.level === 'Начальный' ? '#0260e8' : 
+                           doc.level === 'Средний' ? '#0260e8' : '#1f5bff',
+                    borderColor: doc.level === 'Начальный' ? 'rgba(2, 96, 232, 0.2)' : 
                                  doc.level === 'Средний' ? 'rgba(2, 96, 232, 0.2)' : 
-                                 'rgba(255, 91, 0, 0.2)'
+                                 'rgba(31, 91, 255, 0.2)'
                   }}>
                     {doc.level}
                   </div>

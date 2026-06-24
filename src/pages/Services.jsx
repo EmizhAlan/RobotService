@@ -5,7 +5,7 @@ import "../pages/styles/ServicesPage.css";
 
 export default function Services() {
   const [activeModal, setActiveModal] = useState(null);
-  const [activeTab, setActiveTab] = useState("trading");
+  const [activeTab, setActiveTab] = useState("hosting");
   const [hoveredCard, setHoveredCard] = useState(null);
   const [visibleSections, setVisibleSections] = useState({});
   const sectionRefs = useRef([]);
@@ -22,6 +22,7 @@ export default function Services() {
     phone: '',
     email: '',
     process: '',
+    service: '',
     budget: 'Не определен',
   });
 
@@ -82,7 +83,8 @@ export default function Services() {
 💼 *Должность:* ${formData.position}
 📞 *Телефон:* ${formData.phone}
 ✉️ *Email:* ${formData.email}
-⚙️ *Процесс:* ${formData.process}
+🛠 *Услуга:* ${formData.service || 'Не выбрана'}
+📝 *Задача:* ${formData.process}
 💰 *Бюджет:* ${formData.budget}
 
 🕒 *Дата:* ${new Date().toLocaleString('ru-RU')}
@@ -93,247 +95,248 @@ export default function Services() {
 
 
   const caseStudies = {
-    trading: {
+    hosting: {
       id: 1,
-      title: "Торговый терминал",
-      category: "Финансовые технологии",
-      tagline: "Автоматизированные стратегии криптотрейдинга",
-      description: "Полноценный торговый терминал с AI-стратегиями, риск-менеджментом и подключением к 20+ биржам",
-      problem: "Ручной трейдинг требует постоянного мониторинга, подвержен эмоциям и упускает рыночные возможности",
-      solution: "Автоматическая торговля 24/7 по алгоритмическим стратегиям с машинным обучением",
+      title: "Хостинг для Telegram-ботов",
+      category: "Инфраструктура",
+      tagline: "Надёжная работа ваших ботов 24/7 без простоев",
+      description: "Выделенные серверы для размещения Telegram-ботов и веб-приложений с гарантированным uptime 99.9%. Автоматическое масштабирование и резервное копирование.",
+      problem: "Боты падают при перезагрузке компьютера, нет резервного копирования данных, сложно масштабировать при росте пользователей",
+      solution: "Облачная инфраструктура с мониторингом, автосохранением и мгновенным восстановлением после сбоев",
       results: [
-        "Средняя месячная доходность: 8-15%",
-        "Обработка 1000+ сделок в день",
-        "Снижение человеческого фактора на 95%"
+        "Uptime 99.9% — боты работают круглосуточно",
+        "Автоматическое резервное копирование каждые 6 часов",
+        "Масштабирование до 10 000+ одновременных пользователей",
+        "Мониторинг и алерты в Telegram в реальном времени"
       ],
       features: [
         {
-          title: "Мультибиржевой арбитраж",
-          description: "Автоматический поиск и исполнение арбитражных сделок между биржами"
+          title: "Мгновенный деплой",
+          description: "Развертывание бота за 5 минут через Git или ZIP-загрузку"
         },
         {
-          title: "AI-стратегии",
-          description: "Адаптивные алгоритмы на основе машинного обучения и анализа паттернов"
+          title: "Автомасштабирование",
+          description: "Автоматическое добавление ресурсов при росте нагрузки"
         },
         {
-          title: "Риск-менеджмент",
-          description: "Автоматическое ограничение убытков, диверсификация портфеля"
-        },
-        {
-          title: "Backtesting",
-          description: "Тестирование стратегий на исторических данных с визуализацией"
+          title: "Безопасность",
+          description: "SSL-сертификаты, шифрование данных, защита от DDoS"
         },
         {
           title: "Мониторинг",
-          description: "Панель управления с реальной аналитикой и уведомлениями"
+          description: "Панель управления с метриками работы бота и уведомлениями"
         },
         {
-          title: "API интеграции",
-          description: "Подключение к Binance, Bybit, OKX, KuCoin и другим площадкам"
+          title: "Бэкапы",
+          description: "Автоматическое сохранение базы данных и конфигураций"
+        },
+        {
+          title: "Поддержка",
+          description: "Техническая помощь 24/7 и консультации по оптимизации"
         }
       ],
-      technologies: ["Python", "CCXT", "FastAPI", "PostgreSQL", "Redis", "Docker", "TensorFlow"],
-      implementation: "14-21 день",
-      investment: "от 120 000 ₽",
-      roi: "3-6 месяцев",
+      technologies: ["Node.js", "Docker", "PostgreSQL", "Redis", "Nginx", "Let's Encrypt"],
+      implementation: "1-3 дня",
+      investment: "от 2 990 ₽/мес",
+      roi: "Мгновенная доступность",
       color: "#0066CC",
       gradient: "linear-gradient(135deg, #0066CC 0%, #004D99 100%)"
     },
-    ecommerce: {
+    website: {
       id: 2,
-      title: "Автоматизированный магазин",
-      category: "Электронная коммерция",
-      tagline: "Полный цикл продаж в мессенджерах",
-      description: "CRM-система с автоматической обработкой заказов, инвентаризацией и аналитикой",
-      problem: "Ручная обработка заказов, ошибки в остатках, потеря клиентов из-за медленного ответа",
-      solution: "Единая система управления заказами, клиентами и складом через Telegram-интерфейс",
+      title: "Сайт под ключ",
+      category: "Веб-разработка",
+      tagline: "От идеи до работающего сайта за 14 дней",
+      description: "Полный цикл создания сайта: дизайн, разработка, наполнение контентом, SEO-оптимизация и запуск. Адаптивный дизайн для всех устройств.",
+      problem: "Самостоятельное создание сайта занимает месяцы, сложно разобраться в хостинге и домене, нет expertise в дизайне и SEO",
+      solution: "Готовое решение под ключ с дизайном, контентом и настройкой всех сервисов",
       results: [
-        "Сокращение времени обработки заказа с 30 до 2 минут",
-        "Автоматическое обновление остатков",
-        "Персональные предложения на основе истории покупок",
-        "Снижение нагрузки на менеджеров на 70%"
+        "Готовый сайт за 14 дней с нуля",
+        "Адаптивный дизайн для мобильных и десктопов",
+        "SEO-оптимизация и подключение к Google Analytics",
+        "Обучение команды работе с контентом"
       ],
       features: [
         {
-          title: "Каталог товаров",
-          description: "Автоматическая синхронизация с CMS и маркетплейсами"
+          title: "Уникальный дизайн",
+          description: "Разработка индивидуального макета под ваш бренд"
         },
         {
-          title: "Корзина и оформление",
-          description: "Мгновенное создание заказа с выбором доставки и оплаты"
+          title: "Адаптивность",
+          description: "Идеальное отображение на телефонах, планшетах и ПК"
         },
         {
-          title: "Интеграция со складом",
-          description: "Автоматический учет остатков и резервирование товара"
+          title: "CMS система",
+          description: "Удобная панель управления для редактирования контента"
         },
         {
-          title: "Платежные системы",
-          description: "Поддержка 10+ способов оплаты с автоматическими чеками"
+          title: "SEO-оптимизация",
+          description: "Настройка метатегов, скорости загрузки и индексации"
         },
         {
-          title: "Лояльность",
-          description: "Программа бонусов, скидки и промокоды"
+          title: "Интеграции",
+          description: "Подключение оплаты, CRM, мессенджеров и соцсетей"
         },
         {
-          title: "Аналитика продаж",
-          description: "Дашборд с конверсией, средним чеком и LTV"
+          title: "Обучение",
+          description: "Видеоинструкции и документация по управлению сайтом"
         }
       ],
-      technologies: ["Node.js", "PostgreSQL", "Redis", "WooCommerce API", "ЮКасса API", "CDEK API"],
-      implementation: "10-18 дней",
-      investment: "от 85 000 ₽",
-      roi: "2-4 месяца",
-      color: "#00A86B",
-      gradient: "linear-gradient(135deg, #00A86B 0%, #008F5A 100%)"
+      technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "PostgreSQL", "AWS S3"],
+      implementation: "14-21 день",
+      investment: "от 45 000 ₽",
+      roi: "3-6 месяцев",
+      color: "#0260e8",
+      gradient: "linear-gradient(135deg, #0260e8 0%, #0145a8 100%)"
     },
-    assistant: {
+    bot: {
       id: 3,
-      title: "Бизнес-ассистент",
-      category: "Автоматизация процессов",
-      tagline: "Умный помощник для рутинных операций",
-      description: "AI-ассистент для автоматизации административных задач и коммуникации",
-      problem: "Ручная обработка запросов клиентов, планирование встреч, сбор данных отнимают 40% рабочего времени",
-      solution: "Интеллектуальный помощник, обрабатывающий запросы и выполняющий задачи автономно",
+      title: "Telegram-боты под ключ",
+      category: "Автоматизация",
+      tagline: "Умные боты для продаж, поддержки и автоматизации",
+      description: "Разработка Telegram-ботов любой сложности: интернет-магазины, сервисы поддержки, CRM-интеграции, автоматические рассылки и чат-боты с AI.",
+      problem: "Ручная обработка запросов клиентов, потеря лидов, медленные ответы, невозможность масштабировать команду поддержки",
+      solution: "Интеллектуальный бот, который работает 24/7, обрабатывает заявки и интегрируется с вашими бизнес-процессами",
       results: [
-        "Экономия 25+ часов в неделю на рутине",
-        "Круглосуточная обработка запросов",
-        "Интеграция с календарем и CRM",
-        "Автоматизация отчетности"
+        "Обработка 1000+ запросов в день без сотрудников",
+        "Сокращение времени ответа с 30 минут до 5 секунд",
+        "Автоматический сбор лидов и квалификация клиентов",
+        "Интеграция с CRM, платёжными системами и складом"
       ],
       features: [
         {
-          title: "Обработка запросов",
-          description: "Понимание естественного языка и контекстный ответ"
+          title: "Интернет-магазин",
+          description: "Каталог товаров, корзина, оплата и доставка внутри Telegram"
         },
         {
-          title: "Планирование встреч",
-          description: "Автоматическое согласование времени и напоминания"
+          title: "Умные ответы",
+          description: "AI-обработка вопросов с контекстным пониманием"
         },
         {
-          title: "Сбор и анализ данных",
-          description: "Парсинг информации из различных источников"
+          title: "Автоматизация",
+          description: "Рассылки, напоминания, триггерные сообщения"
         },
         {
-          title: "Интеграция с CRM",
-          description: "Автоматическое создание лидов и обновление карточек"
+          title: "Интеграции",
+          description: "Подключение к 1С, Bitrix24, ЮKassa, СДЭК и другим"
         },
         {
-          title: "Мультиязычность",
-          description: "Поддержка русского, английского и других языков"
+          title: "Аналитика",
+          description: "Дашборд с конверсиями, удержанием и доходами"
         },
         {
-          title: "Голосовые команды",
-          description: "Управление через голосовые сообщения"
+          title: "Мультитематичность",
+          description: "Поддержка нескольких языков и веток сценариев"
         }
       ],
-      technologies: ["Python", "OpenAI API", "Google Dialogflow", "PostgreSQL", "Redis", "REST API"],
-      implementation: "12-20 дней",
-      investment: "от 95 000 ₽",
+      technologies: ["Node.js", "Python", "PostgreSQL", "Redis", "Telegram API", "OpenAI"],
+      implementation: "7-14 дней",
+      investment: "от 25 000 ₽",
       roi: "1-3 месяца",
-      color: "#9C27B0",
-      gradient: "linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%)"
+      color: "#0260e8",
+      gradient: "linear-gradient(135deg, #0260e8 0%, #0145a8 100%)"
     },
-    analytics: {
+    automation: {
       id: 4,
-      title: "Аналитическая платформа",
-      category: "Бизнес-аналитика",
-      tagline: "Мониторинг и прогнозирование в реальном времени",
-      description: "Система сбора, анализа и визуализации данных с прогнозными моделями",
-      problem: "Разрозненные данные, ручное формирование отчетов, отсутствие предиктивной аналитики",
-      solution: "Централизованная платформа с автоматическими отчетами и AI-прогнозами",
+      title: "Бизнес-автоматизация",
+      category: "Процессы",
+      tagline: "Связываем все сервисы в единую систему",
+      description: "Автоматизация бизнес-процессов: от обработки заявок до отчётности. Интеграция CRM, мессенджеров, платёжных систем и складского учёта.",
+      problem: "Данные разрознены по разным сервисам, ручной перенос информации, ошибки при дублировании, сложная отчётность",
+      solution: "Единая экосистема, где все сервисы обмениваются данными автоматически",
       results: [
-        "Сокращение времени на отчеты с 8 до 0.5 часов в день",
-        "Прогнозирование трендов с точностью 85%+",
-        "Выявление скрытых закономерностей",
-        "Автоматические алерты об аномалиях"
+        "Сокращение ручного труда на 60-80%",
+        "Устранение ошибок при ручном вводе данных",
+        "Автоматическая генерация отчётов и аналитики",
+        "Скорость обработки заявок увеличена в 5 раз"
       ],
       features: [
         {
-          title: "Дашборды",
-          description: "Настраиваемые панели с ключевыми метриками"
+          title: "Вебхуки",
+          description: "Автоматическая реакция на события в других сервисах"
         },
         {
-          title: "Прогнозные модели",
-          description: "Предсказание спроса, продаж и поведения клиентов"
+          title: "ETL процессы",
+          description: "Сбор, преобразование и загрузка данных из разных источников"
         },
         {
-          title: "Интеграция данных",
-          description: "Объединение данных из 30+ источников"
+          title: "API интеграции",
+          description: "Подключение к 50+ популярным сервисам через API"
         },
         {
-          title: "Автоотчеты",
-          description: "Ежедневные/еженедельные отчеты по расписанию"
+          title: "Автоматизация",
+          description: "Триггерные сценарии и цепочки действий"
         },
         {
-          title: "Визуализация",
-          description: "Интерактивные графики и диаграммы"
+          title: "Отчётность",
+          description: "Автоматические дашборды и отчёты по расписанию"
         },
         {
-          title: "Мобильная аналитика",
-          description: "Доступ к данным через Telegram"
+          title: "Валидация",
+          description: "Проверка данных и алерты при аномалиях"
         }
       ],
-      technologies: ["Python", "Apache Kafka", "TensorFlow", "Grafana", "ClickHouse", "D3.js"],
-      implementation: "18-30 дней",
-      investment: "от 150 000 ₽",
-      roi: "4-8 месяцев",
-      color: "#FF6B35",
-      gradient: "linear-gradient(135deg, #FF6B35 0%, #E85A2D 100%)"
+      technologies: ["Python", "RabbitMQ", "Apache Kafka", "PostgreSQL", "Grafana", "Zapier API"],
+      implementation: "10-20 дней",
+      investment: "от 60 000 ₽",
+      roi: "2-4 месяца",
+      color: "#0260e8",
+      gradient: "linear-gradient(135deg, #0260e8 0%, #0145a8 100%)"
     },
-    logistics: {
+    support: {
       id: 5,
-      title: "Логистический контроллер",
-      category: "Склад и доставка",
-      tagline: "Оптимизация цепочек поставок",
-      description: "Система управления запасами, маршрутизации и отслеживания доставки",
-      problem: "Ручное планирование маршрутов, ошибки в отгрузках, неоптимальное использование транспорта",
-      solution: "Автоматическое планирование логистики с учетом множества факторов и ограничений",
+      title: "Техподдержка и развитие",
+      category: "Сервис",
+      tagline: "Ваш IT-отдел на аутсорсе",
+      description: "Круглосуточная поддержка ваших цифровых продуктов: мониторинг, обновления, исправление багов, доработка функционала и консультации.",
+      problem: "Нет штатного разработчика, сложно найти подрядчика для мелких правок, нет мониторинга и превентивного обслуживания",
+      solution: "Выделенная команда поддержки с SLA 99.9% и быстрым откликом на любые запросы",
       results: [
-        "Сокращение логистических расходов на 15-25%",
-        "Оптимизация загрузки транспорта на 30%",
-        "Сокращение времени доставки на 20%",
-        "Автоматическое отслеживание всех отправлений"
+        "Реакция на критические инциденты в течение 15 минут",
+        "Проактивный мониторинг и предотвращение сбоев",
+        "Регулярные обновления и улучшения продукта",
+        "Экономия 200+ тыс. ₽ в месяц на штатном разработчике"
       ],
       features: [
         {
-          title: "Маршрутизация",
-          description: "Оптимальные маршруты с учетом пробок и времени"
+          title: "Мониторинг 24/7",
+          description: "Отслеживание работоспособности и алерты при проблемах"
         },
         {
-          title: "Управление запасами",
-          description: "Прогнозирование пополнения и автоматические заказы"
+          title: "Обновления",
+          description: "Регулярное обновление зависимостей и патчи безопасности"
         },
         {
-          title: "Трекинг",
-          description: "Отслеживание местоположения в реальном времени"
+          title: "Баг-фиксы",
+          description: "Исправление ошибок в течение 24 часов"
         },
         {
-          title: "Документооборот",
-          description: "Автоматическое формирование накладных и актов"
+          title: "Новый функционал",
+          description: "Доработка по ТЗ с приоритизацией задач"
         },
         {
-          title: "Интеграция с ТК",
-          description: "Подключение к СДЭК, Boxberry, Почте России"
+          title: "Консультации",
+          description: "Экспертные рекомендации по развитию продукта"
         },
         {
-          title: "Аналитика расходов",
-          description: "Детализация затрат по направлениям и перевозчикам"
+          title: "Документация",
+          description: "Актуальная документация и changelog изменений"
         }
       ],
-      technologies: ["Java", "PostgreSQL/PostGIS", "Redis", "RabbitMQ", "Leaflet.js", "OR-Tools"],
-      implementation: "20-35 дней",
-      investment: "от 180 000 ₽",
-      roi: "5-9 месяцев",
-      color: "#2D936C",
-      gradient: "linear-gradient(135deg, #2D936C 0%, #1E6B4E 100%)"
+      technologies: ["Node.js", "Python", "Docker", "Git", "Grafana", "PagerDuty"],
+      implementation: "С первого дня",
+      investment: "от 15 000 ₽/мес",
+      roi: "Экономия на штате",
+      color: "#0260e8",
+      gradient: "linear-gradient(135deg, #0260e8 0%, #0145a8 100%)"
     }
   };
 
   const metrics = [
-    { value: "150+", label: "Проектов автоматизации", description: "Успешно внедренных решений" },
-    { value: "40%", label: "Средняя экономия", description: "Сокращение операционных затрат" },
-    { value: "98%", label: "Надежность систем", description: "Uptime работающих решений" },
-    { value: "3.2", label: "Средний ROI", description: "Окупаемость в месяцах" }
+    { value: "200+", label: "Запущенных ботов", description: "Работают 24/7 для клиентов" },
+    { value: "99.9%", label: "Uptime серверов", description: "Гарантия доступности хостинга" },
+    { value: "14 дней", label: "Средний срок", description: "Запуск сайта под ключ" },
+    { value: "3.5x", label: "Рост конверсии", description: "Средний результат клиентов" }
   ];
 
   const implementationSteps = [
@@ -346,32 +349,32 @@ export default function Services() {
 
   const testimonials = [
     {
-      company: "Крипто-хедж-фонд",
-      person: "Александр В., управляющий директор",
-      text: "Торговый терминал сократил операционные расходы на 40% и увеличил доходность портфеля. Система работает стабильно даже при высокой волатильности.",
-      result: "+12% к прибыли"
+      company: "Telegram-магазин одежды",
+      person: "Анна М., владелец бизнеса",
+      text: "Перенесли бота на наш хостинг — теперь работает 24/7 без сбоев. За первый месяц получили 500+ заказов через Telegram. Поддержка отвечает моментально!",
+      result: "+500 заказов/мес"
     },
     {
-      company: "Сеть розничных магазинов",
-      person: "Марина К., операционный директор",
-      text: "Автоматизированный магазин в Telegram увеличил онлайн-продажи на 65% и сократил нагрузку на кол-центр. Клиенты ценят скорость оформления заказа.",
-      result: "+65% продаж"
+      company: "Сеть кофеен",
+      person: "Дмитрий К., операционный директор",
+      text: "Заказали сайт под ключ за 2 недели. Получили не только красивый дизайн, но и встроенный бот для заказов. Клиенты в восторге от удобства!",
+      result: "Сайт + бот за 14 дней"
     },
     {
-      company: "Логистическая компания",
-      person: "Дмитрий П., директор по развитию",
-      text: "Логистический контроллер оптимизировал маршруты и сократил расходы на топливо на 18%. Теперь управляем 200+ машинами через одного бота.",
-      result: "-18% расходов"
+      company: "IT-стартап",
+      person: "Елена С., CTO",
+      text: "Бот для техподдержки обрабатывает 80% обращений автоматически. Экономим 150 часов в месяц и сокращаем расходы на колл-центр в 3 раза.",
+      result: "-80% нагрузки на поддержку"
     }
   ];
 
   const processSteps = [
-    { number: "01", title: "Анализ", desc: "Изучаем бизнес-процессы и ставим цели" },
-    { number: "02", title: "Дизайн", desc: "Проектируем интерфейс и сценарии бота" },
-    { number: "03", title: "Разработка", desc: "Пишем код и интегрируем системы" },
-    { number: "04", title: "Тестирование", desc: "Проверяем работу в реальных условиях" },
-    { number: "05", title: "Запуск", desc: "Разворачиваем бота и обучаем команду" },
-    { number: "06", title: "Поддержка", desc: "Мониторим и улучшаем систему" }
+    { number: "01", title: "Консультация", desc: "Обсуждаем задачу и подбираем решение" },
+    { number: "02", title: "Расчёт", desc: "Формируем ТЗ и рассчитываем стоимость" },
+    { number: "03", title: "Разработка", desc: "Создаём бота, сайт или настраиваем хостинг" },
+    { number: "04", title: "Тестирование", desc: "Проверяем работу всех компонентов" },
+    { number: "05", title: "Запуск", desc: "Разворачиваем проект и обучаем команду" },
+    { number: "06", title: "Поддержка", desc: "Мониторим, обновляем и развиваем проект" }
   ];
 
   useEffect(() => {
@@ -493,17 +496,17 @@ export default function Services() {
         <div className="container">
           <div className="hero-content_2">
             <div className="hero-badge_2">
-              <span className="badge-text">Интеллектуальная автоматизация</span>
+              <span className="badge-text">Разработка и хостинг</span>
             </div>
             
             <h1 className="hero-title_2">
-              <span className="title-line">Превращаем рутину в</span>
-              <span className="title-line highlight">автоматизированные системы</span>
+              <span className="title-line">Создаём и размещаем</span>
+              <span className="title-line highlight">Telegram-ботов и сайты</span>
             </h1>
             
             <p className="hero-subtitle_2">
-              Разрабатываем комплексные решения на основе Telegram-ботов, которые полностью 
-              заменяют человеческое участие в ключевых бизнес-процессах. От трейдинга до логистики.
+              Закажите хостинг для ваших Telegram-ботов или сайт под ключ. 
+              Надёжная инфраструктура, современный дизайн и полная автоматизация бизнес-процессов.
             </p>
             
             <div className="metrics-grid">
@@ -521,13 +524,13 @@ export default function Services() {
                 className="primary-button"
                 onClick={() => openModal("audit")}
               >
-                Заказать аудит процессов
+                Бесплатная консультация
               </button>
               <button 
                 className="secondary-button"
                 onClick={() => document.getElementById("cases").scrollIntoView({ behavior: 'smooth' })}
               >
-                Изучить кейсы
+                Наши услуги
               </button>
             </div>
           </div>
@@ -543,10 +546,10 @@ export default function Services() {
       >
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">Реализованные решения</div>
-            <h2 className="section-title">Бизнес-кейсы полной автоматизации</h2>
+            <div className="section-badge">Наши услуги</div>
+            <h2 className="section-title">Комплексные решения для вашего бизнеса</h2>
             <p className="section-subtitle">
-              Комплексные системы, которые работают автономно 24/7
+              От хостинга до полноценного сайта под ключ
             </p>
           </div>
           
@@ -647,15 +650,14 @@ export default function Services() {
               <button 
                 className="case-button primary"
                 onClick={() => openModal(currentCase.id)}
-                
               >
-                Рассчитать для моего бизнеса
+                Заказать услугу
               </button>
               <button 
                 className="case-button secondary"
                 onClick={() => navigate('/order')}
               >
-                Получить детальное ТЗ
+                Получить консультацию
               </button>
             </div>
           </div>
@@ -666,10 +668,10 @@ export default function Services() {
       <section className="process-section" data-section="process" ref={(el) => addToRefs(el, 2)}>
         <div className="container">
           <div className="section-header center">
-            <div className="section-badge">Методология</div>
-            <h2 className="section-title">Процесс внедрения</h2>
+            <div className="section-badge">Как мы работаем</div>
+            <h2 className="section-title">6 шагов от идеи до запуска</h2>
             <p className="section-subtitle">
-              От анализа до полной автоматизации за 6 этапов
+              Прозрачный процесс разработки и хостинга
             </p>
           </div>
           
@@ -749,10 +751,10 @@ export default function Services() {
       <section className="testimonials-section" data-section="testimonials" ref={(el) => addToRefs(el, 3)}>
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">Результаты</div>
-            <h2 className="section-title">Эффект от автоматизации</h2>
+            <div className="section-badge">Отзывы клиентов</div>
+            <h2 className="section-title">Что говорят наши клиенты</h2>
             <p className="section-subtitle">
-              Как наши решения меняют бизнес-процессы
+              Реальные результаты от наших услуг
             </p>
           </div>
           
@@ -780,25 +782,25 @@ export default function Services() {
           <div className="cta-card">
             <div className="cta-content">
               <h2 className="cta-title">
-                Готовы автоматизировать ключевые процессы?
+                Готовы запустить вашего бота или сайт?
               </h2>
               <p className="cta-text">
-                Проведем бесплатный аудит вашего бизнеса и предложим решение, 
-                которое окупится за 3-6 месяцев
+                Бесплатная консультация и расчёт стоимости. 
+                Запустим ваш проект за 14 дней с гарантией качества
               </p>
               
               <div className="cta-offer">
                 <div className="offer-item">
                   <div className="offer-check">✓</div>
-                  <div className="offer-text">Технический аудит процессов</div>
+                  <div className="offer-text">Бесплатный аудит и консультация</div>
                 </div>
                 <div className="offer-item">
                   <div className="offer-check">✓</div>
-                  <div className="offer-text">Расчет экономического эффекта</div>
+                  <div className="offer-text">Расчёт стоимости за 24 часа</div>
                 </div>
                 <div className="offer-item">
                   <div className="offer-check">✓</div>
-                  <div className="offer-text">Прототип системы за 3 дня</div>
+                  <div className="offer-text">Запуск проекта за 14 дней</div>
                 </div>
               </div>
               
@@ -807,10 +809,10 @@ export default function Services() {
                   className="cta-primary"
                   onClick={() => openModal("consultation")}
                 >
-                  Получить расчет ROI
+                  Получить расчёт стоимости
                 </button>
                 <button className="cta-secondary" onClick={() => navigate('/cases')}>
-                  Скачать презентацию кейсов
+                  Смотреть кейсы
                 </button>
               </div>
             </div>
@@ -826,10 +828,10 @@ export default function Services() {
             
             <div className="modal-header">
               <h2 className="modal-title">
-                {activeModal === 'audit' ? 'Бесплатный аудит процессов' : 'Расчет автоматизации'}
+                {activeModal === 'audit' ? 'Бесплатная консультация' : 'Расчёт стоимости проекта'}
               </h2>
               <p className="modal-subtitle">
-                Заполните форму, и наш технический директор свяжется с вами в течение 2 часов
+                Заполните форму, и наш специалист свяжется с вами в течение 2 часов
               </p>
             </div>
             
@@ -910,29 +912,30 @@ export default function Services() {
               </div>
               
               <div className="form-group_2">
-                <label className="form-label">Какой процесс хотите автоматизировать?</label>
+                <label className="form-label">Какую услугу вы хотите заказать?</label>
+                <select className="form-select" name="service"
+                    value={formData.service || ''}
+                    onChange={handleFormChange}>
+                  <option value="">Выберите услугу</option>
+                  <option value="hosting">Хостинг для Telegram-ботов</option>
+                  <option value="website">Сайт под ключ</option>
+                  <option value="bot">Telegram-бот под ключ</option>
+                  <option value="automation">Бизнес-автоматизация</option>
+                  <option value="support">Техподдержка</option>
+                </select>
+              </div>
+
+              <div className="form-group_2">
+                <label className="form-label">Опишите вашу задачу</label>
                 <textarea 
                   className="form-textarea"
                   name="process"
                   value={formData.process}
                   onChange={handleFormChange}
                   rows="3"
-                  placeholder="Опишите текущий процесс, проблемы и ожидаемый результат..."
+                  placeholder="Расскажите о вашем проекте: какой бот или сайт нужен, какие функции должны быть..."
                   required
                 />
-              </div>
-              
-              <div className="form-group_2">
-                <label className="form-label">Бюджет на автоматизацию</label>
-                <select className="form-select" name="budget"
-                    value={formData.budget}
-                    onChange={handleFormChange}>
-                  <option>Не определен</option>
-                  <option>50-100 тыс. ₽</option>
-                  <option>100-250 тыс. ₽</option>
-                  <option>250-500 тыс. ₽</option>
-                  <option>500 тыс. ₽+</option>
-                </select>
               </div>
 
               <div className="form-agreements">
@@ -951,7 +954,7 @@ export default function Services() {
                     </a>
                   </span>
                 </label>
-
+              
                 <label className="checkbox">
                   <input
                     type="checkbox"
@@ -968,7 +971,7 @@ export default function Services() {
                   </span>
                 </label>
               </div>
-
+              
               
               <div className="form-actions">
                 <button
@@ -976,7 +979,7 @@ export default function Services() {
                   className="submit-button"
                   disabled={loading || !agreePrivacy || !agreeTerms}
                   >
-                  {loading ? 'Отправка...' : 'Отправить заявку на расчет'}
+                  {loading ? 'Отправка...' : 'Отправить заявку'}
                 </button>
 
               </div>
